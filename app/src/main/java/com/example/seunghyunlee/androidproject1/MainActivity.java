@@ -31,7 +31,6 @@ public class MainActivity extends AppCompatActivity {
 
         final Button enterButton = (Button) findViewById(R.id.enterButton);
 
-
         enterButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -40,43 +39,20 @@ public class MainActivity extends AppCompatActivity {
                 String base = inputBase.getText().toString();
                 String output = outputBase.getText().toString();
 
-                ArrayList<Integer> listOfNumbers = new ArrayList();
-
-                int baseNumber = Integer.parseInt(base);
-
-                for(int i=0; i<number.length();i++){
-                    listOfNumbers.add(number.indexOf(i));
-                }
-
-                for(int i=0; i<listOfNumbers.size();i++){
-                    if(listOfNumbers.get(i)>baseNumber){
-                        inputBase.setBackgroundResource(R.color.shade);
-                        Toast.makeText(MainActivity.this, "Wrong Input", Toast.LENGTH_SHORT).show();
-                    }
-                }
-
-
                 if(number.isEmpty() || base.isEmpty() || output.isEmpty()){
                     Toast.makeText(MainActivity.this, "Fill in the blanks", Toast.LENGTH_SHORT).show();
                 }
                 try {
                     int decimalInput = Integer.parseInt(number, Integer.parseInt(base));
                     answer.setText(Integer.toString(decimalInput, Integer.parseInt(output)));
+                    inputBase.setBackgroundResource(R.color.white);
 
                 }catch (NumberFormatException nfe){
-
+                    inputBase.setBackgroundResource(R.color.shade);
+                    Toast.makeText(MainActivity.this, "Wrong Input", Toast.LENGTH_SHORT).show();
 
                 }
-
-
             }
         });
-
-
-
     }
-
-
-
-
 }

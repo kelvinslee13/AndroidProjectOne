@@ -10,11 +10,28 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.example.seunghyunlee.androidproject1.MainActivity"
-    android:gravity="center">
+
+    >
+    <RelativeLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:background="#AFA7EF"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:text="AndroidProject1"
+            android:textSize="@dimen/headerSize" />
+    </RelativeLayout>
 
     <RadioGroup
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/paddingTop">
 
         <TextView
             android:layout_width="match_parent"
@@ -69,7 +86,8 @@
             <TextView
                 android:id="@+id/answer"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/defaultSize"/>
 
         </RadioGroup>
 
